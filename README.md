@@ -1,3 +1,8 @@
+## Disclamer
+This fork:
+* updates docker-entrypoint.sh to ensure proper onerive integration when single tenant is available
+* modifies access rights and run user to ensure proper non-root execution on Red Hat OpenShift
+
 [![Build Status](https://github.com/jgraph/docker-drawio/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/jgraph/docker-drawio/actions)
 [![Build Status](https://github.com/jgraph/docker-drawio/workflows/Docker%20image-export%20CI/badge.svg)](https://github.com/jgraph/docker-drawio/actions)
 
