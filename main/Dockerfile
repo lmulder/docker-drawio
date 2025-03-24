@@ -21,7 +21,6 @@ LABEL maintainer="JGraph Ltd" \
       org.opencontainers.image.source="https://github.com/jgraph/docker-drawio"
 
 ENV RUN_USER            1001
-ENV RUN_GROUP           0
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
@@ -52,11 +51,10 @@ RUN mkdir -p $CATALINA_HOME/webapps/draw && \
 COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 # Add a tomcat user
-RUN groupadd -r ${RUN_GROUP} && useradd -g ${RUN_GROUP} -d ${CATALINA_HOME} -s /bin/bash ${RUN_USER} && \
-    chown -R ${RUN_USER}:${RUN_GROUP} ${CATALINA_HOME}
+USER 0
+RUN chown -R ${RUN_USER}:0 ${CATALINA_HOME}
 
 USER ${RUN_USER}
-
 WORKDIR $CATALINA_HOME
 
 EXPOSE 8080 8443
