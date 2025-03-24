@@ -52,7 +52,8 @@ COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 # Add a tomcat user
 USER 0
-RUN chown -R ${RUN_USER}:0 ${CATALINA_HOME}
+RUN chown -R ${RUN_USER}:0 ${CATALINA_HOME} && \
+    chmod -R 775 ${CATALINA_HOME}
 
 USER ${RUN_USER}
 WORKDIR $CATALINA_HOME
