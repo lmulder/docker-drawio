@@ -20,8 +20,8 @@ LABEL maintainer="JGraph Ltd" \
       org.opencontainers.image.url="https://www.drawio.com" \
       org.opencontainers.image.source="https://github.com/jgraph/docker-drawio"
 
-ENV RUN_USER            tomcat
-ENV RUN_GROUP           tomcat
+ENV RUN_USER            1001
+ENV RUN_GROUP           0
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
