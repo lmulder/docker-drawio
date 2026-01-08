@@ -15,7 +15,7 @@ This fork:
 * draw.io export server image which allow exporting draw.io diagrams to pdf and images
 * docker-compose to run draw.io with the export server
 * docker-compose to run draw.io integrated within nextcloud
-* docker-compose to run draw.io self-contained without any dependency on diagrams.net website (with the export server, plantUml, Google Drive support, OneDrive support, and EMF conversion support (for VSDX export)
+* docker-compose to run draw.io self-contained without any dependency on diagrams.net website (with the export server, Google Drive support, OneDrive support, and EMF conversion support (for VSDX export)
 
 ## Description
 
@@ -77,10 +77,6 @@ Notice that mapping port 80 to container's port 80 allows certbot to work in sta
 ## Changing draw.io configuration
 
 Configuration is managed by `DRAWIO_*` environment variables. For a list of these variables, check the `docker-entrypoint.sh` file in the `main` directory. For example, these variables allow enabling integration with Google Drive, OneDrive, ...
-
-## SOC 2
-
-This repo is not covered by the JGraph SOC 2 process.
 
 ## Reference
 
